@@ -1,5 +1,5 @@
-import pageObjects.MainPage;
-import pageObjects.OrderPage;
+import page.objects.MainPage;
+import page.objects.OrderPage;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;

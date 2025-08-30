@@ -1,4 +1,4 @@
-package pageObjects;
+package page.objects;
 
 import static org.hamcrest.CoreMatchers.is;
 import org.hamcrest.MatcherAssert;
@@ -20,8 +20,17 @@ public class MainPage {
     // Нижняя кнопка "Заказать"
     private final By lowButton = By.xpath(".//div[contains(@class, 'Home_FinishButton')]/button");
 
+    private final By[] accordionHeading = new By[8];
+    private final By[] accordionPanel = new By[8];
+
     public MainPage(WebDriver driver) {
         this.driver = driver;
+
+        for (int i = 0; i < 8; i++)
+        {
+            accordionHeading[i] = By.id("accordion__heading-" + i);
+            accordionPanel[i] = By.id("accordion__panel-" + i);
+        }
     }
 
     // Принять куки
@@ -50,18 +59,18 @@ public class MainPage {
     // Раскрыть вопрос
     public void clickAccordionHeading(int index) {
         new WebDriverWait(driver, EnvConfig.EXPLICITY_TIMEOUT)
-                .until(ExpectedConditions.visibilityOfElementLocated(By.id("accordion__heading-" + index)));
-        WebElement element = driver.findElement(By.id("accordion__heading-" + index));
+                .until(ExpectedConditions.visibilityOfElementLocated(accordionHeading[index]));
+        WebElement element = driver.findElement(accordionHeading[index]);
             ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);
-        driver.findElement(By.id("accordion__heading-" + index)).click();
+        driver.findElement(accordionHeading[index]).click();
     }
 
     // Сравнить ответ с правильным текстом ответа
     public void textIsCorrect(int index, String answerText){
         new WebDriverWait(driver, EnvConfig.EXPLICITY_TIMEOUT)
-                .until(ExpectedConditions.visibilityOfElementLocated(By.id("accordion__panel-" + index)));
-        WebElement element = driver.findElement(By.id("accordion__panel-" + index));
+                .until(ExpectedConditions.visibilityOfElementLocated(accordionPanel[index]));
+        WebElement element = driver.findElement(accordionPanel[index]);
             ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);
-        MatcherAssert.assertThat(driver.findElement(By.id("accordion__panel-" + index)).getText(),is(answerText));
+        MatcherAssert.assertThat(driver.findElement(accordionPanel[index]).getText(),is(answerText));
     }
 }

@@ -1,4 +1,4 @@
-package pageObjects;
+package page.objects;
 
 import org.hamcrest.MatcherAssert;
 import org.openqa.selenium.By;

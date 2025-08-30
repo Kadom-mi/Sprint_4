@@ -1,4 +1,4 @@
-package pageObjects;
+package page.objects;
 
 public class AnswerTexts {
 

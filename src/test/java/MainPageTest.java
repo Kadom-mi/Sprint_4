@@ -1,9 +1,8 @@
 import org.junit.runners.Parameterized;
-import pageObjects.AnswerTexts;
-import pageObjects.MainPage;
+import page.objects.AnswerTexts;
+import page.objects.MainPage;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.openqa.selenium.WebDriver;
 
 @RunWith(Parameterized.class)
 public class MainPageTest extends PageTest {
