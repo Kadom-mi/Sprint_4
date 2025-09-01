@@ -18,14 +18,14 @@ public class MainPageTest extends PageTest {
     @Parameterized.Parameters(name = "Текст Вопросы о важном. Элемент: {1}")
     public static Object[][] setTestData() {
         return new Object[][]{
-                {0, AnswerTexts.ANSWER_ONE_TEXT},
-                {1, AnswerTexts.ANSWER_TWO_TEXT},
-                {2, AnswerTexts.ANSWER_THREE_TEXT},
-                {3, AnswerTexts.ANSWER_FOUR_TEXT},
-                {4, AnswerTexts.ANSWER_FIVE_TEXT},
-                {5, AnswerTexts.ANSWER_SIX_TEXT},
-                {6, AnswerTexts.ANSWER_SEVEN_TEXT},
-                {7, AnswerTexts.ANSWER_EIGHT_TEXT},
+                {0, AnswerTexts.ANSWER_COST_OF_THE_ORDER},
+                {1, AnswerTexts.ANSWER_MULTIPLE_ORDERS},
+                {2, AnswerTexts.ANSWER_RENTAL_TIME},
+                {3, AnswerTexts.ANSWER_ORDER_FOR_TODAY},
+                {4, AnswerTexts.ANSWER_EXTEND_OR_REFUND_EARLIER},
+                {5, AnswerTexts.ANSWER_CHARGING},
+                {6, AnswerTexts.ANSWER_ORDER_CANCELLATION},
+                {7, AnswerTexts.ANSWER_MKAD},
         };
     }
 
